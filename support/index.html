@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REBUS — Support</title>
+<meta name="description" content="REBUS support: contact, player ID, account and data deletion, legal pages.">
+<link rel="canonical" href="https://rebusgame.github.io/support/">
+<meta name="theme-color" content="#0b1533">
+<link rel="icon" type="image/jpeg" href="/assets/icon.jpg">
+<link rel="apple-touch-icon" href="/assets/icon.jpg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<main>
+  <a href="/"><img class="ikon" src="/assets/icon.jpg" alt="REBUS" width="96" height="96" style="width:96px;height:96px;border-radius:22px"></a>
+  <h1 id="baslik">Support</h1>
+  <div class="metin" id="metin">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rebus.game.help@gmail.com">rebus.game.help@gmail.com</a></p>
+  </div>
+  <div class="dugmeler"><a class="dugme altin" id="eposta" href="mailto:rebus.game.help@gmail.com?subject=REBUS">rebus.game.help@gmail.com</a></div>
+</main>
+<footer id="altbilgi"></footer>
+<script src="/assets/site.js"></script>
+<script>
+var E='<a href="mailto:rebus.game.help@gmail.com">rebus.game.help@gmail.com</a>';
+REBUS.baslat({
+  tr:{b:"Destek",d:"E-posta gönder",m:[
+    ["Bize ulaşın","Her türlü soru, hata bildirimi ve öneri için: "+E+". Mesajınıza oyundaki <b>Oyuncu No</b>'nuzu (Ayarlar &gt; Yasal) ve telefon modelinizi eklerseniz daha hızlı yardımcı oluruz."],
+    ["Hesap ve veri silme","Oyunda: Ayarlar &gt; Yasal &gt; <b>VERİLERİMİ SİL</b>. Oyuna erişemiyorsanız <a href=\"/delete-account/\">hesap silme sayfasındaki</a> adımları izleyin."],
+    ["Satın almalar","Altın ve elmas satın alımlarıyla ilgili bir sorun yaşarsanız satın alma tarihini ve Oyuncu No'nuzu e-postayla gönderin."],
+    ["Yasal","<a href=\"/privacy/\">Gizlilik Politikası</a> · <a href=\"/terms/\">Kullanım Koşulları</a>"]]},
+  en:{b:"Support",d:"Send an email",m:[
+    ["Contact us","For questions, bug reports and suggestions: "+E+". Please include your in-game <b>Player ID</b> (Settings &gt; Legal) and your phone model so we can help faster."],
+    ["Account & data deletion","In the game: Settings &gt; Legal &gt; <b>DELETE MY DATA</b>. If you cannot open the game, follow the steps on the <a href=\"/delete-account/\">account deletion page</a>."],
+    ["Purchases","If you have a problem with a gold or gem purchase, email us the purchase date and your Player ID."],
+    ["Legal","<a href=\"/privacy/\">Privacy Policy</a> · <a href=\"/terms/\">Terms of Use</a>"]]},
+  de:{b:"Support",d:"E-Mail senden",m:[
+    ["Kontakt","Für Fragen, Fehlermeldungen und Vorschläge: "+E+". Bitte gib deine <b>Spieler-ID</b> (Einstellungen &gt; Rechtliches) und dein Handymodell an, damit wir schneller helfen können."],
+    ["Konto- & Datenlöschung","Im Spiel: Einstellungen &gt; Rechtliches &gt; <b>MEINE DATEN LÖSCHEN</b>. Wenn du das Spiel nicht öffnen kannst, folge den Schritten auf der <a href=\"/delete-account/\">Seite zur Kontolöschung</a>."],
+    ["Käufe","Bei Problemen mit einem Gold- oder Edelsteinkauf sende uns das Kaufdatum und deine Spieler-ID per E-Mail."],
+    ["Rechtliches","<a href=\"/privacy/\">Datenschutz</a> · <a href=\"/terms/\">Nutzungsbedingungen</a>"]]},
+  es:{b:"Soporte",d:"Enviar un correo",m:[
+    ["Contacto","Para preguntas, errores y sugerencias: "+E+". Incluye tu <b>ID de jugador</b> (Ajustes &gt; Legal) y el modelo de tu teléfono para ayudarte más rápido."],
+    ["Eliminar cuenta y datos","En el juego: Ajustes &gt; Legal &gt; <b>BORRAR MIS DATOS</b>. Si no puedes abrir el juego, sigue los pasos de la <a href=\"/delete-account/\">página de eliminación de cuenta</a>."],
+    ["Compras","Si tienes un problema con una compra de oro o gemas, envíanos por correo la fecha de compra y tu ID de jugador."],
+    ["Legal","<a href=\"/privacy/\">Política de privacidad</a> · <a href=\"/terms/\">Condiciones de uso</a>"]]},
+  fr:{b:"Assistance",d:"Envoyer un e-mail",m:[
+    ["Nous contacter","Pour toute question, bug ou suggestion : "+E+". Indique ton <b>ID joueur</b> (Paramètres &gt; Légal) et le modèle de ton téléphone pour une aide plus rapide."],
+    ["Suppression du compte et des données","Dans le jeu : Paramètres &gt; Légal &gt; <b>SUPPRIMER MES DONNÉES</b>. Si tu ne peux pas ouvrir le jeu, suis les étapes de la <a href=\"/delete-account/\">page de suppression du compte</a>."],
+    ["Achats","En cas de problème avec un achat d'or ou de gemmes, envoie-nous par e-mail la date d'achat et ton ID joueur."],
+    ["Légal","<a href=\"/privacy/\">Politique de confidentialité</a> · <a href=\"/terms/\">Conditions d'utilisation</a>"]]}
+},function(T){
+  document.title="REBUS — "+T.b;
+  document.getElementById("baslik").textContent=T.b;
+  document.getElementById("metin").innerHTML=T.m.map(function(x){return "<h2>"+x[0]+"</h2><p>"+x[1]+"</p>";}).join("");
+  document.getElementById("eposta").textContent=T.d;
+});
+</script>
+</body>
+</html>
