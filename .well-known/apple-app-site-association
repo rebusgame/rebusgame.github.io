@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["U8BRWFLDJX.com.unuvargames.rebus"],
+        "components": [
+          { "/": "/duel", "comment": "REBUS duel invite" },
+          { "/": "/duel/*", "comment": "REBUS duel invite" }
+        ]
+      }
+    ]
+  }
+}
