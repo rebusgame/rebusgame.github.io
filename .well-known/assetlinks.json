@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.unuvargames.rebus",
+      "sha256_cert_fingerprints": ["74:AD:C3:0F:45:0C:70:DD:1E:53:DF:96:81:7D:75:67:08:22:FF:05:88:57:00:96:45:89:CF:71:3D:B4:75:E7"]
+    }
+  }
+]
