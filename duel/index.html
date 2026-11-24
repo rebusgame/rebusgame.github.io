@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REBUS — Duel invite</title>
+<meta name="description" content="REBUS picture word puzzle: your friend challenged you to a duel.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="REBUS">
+<meta property="og:title" content="REBUS — Can you beat me?">
+<meta property="og:description" content="Combine two pictures, find the word. A 10-puzzle duel invite.">
+<meta property="og:image" content="https://rebusgame.github.io/assets/icon.jpg">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1533">
+<link rel="icon" type="image/jpeg" href="/assets/icon.jpg">
+<link rel="apple-touch-icon" href="/assets/icon.jpg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<main>
+  <img class="ikon" src="/assets/icon.jpg" alt="REBUS" width="132" height="132">
+  <h1>REBUS</h1>
+  <p class="alt" id="baslik"></p>
+  <p id="aciklama"></p>
+  <div id="kodKutu" hidden><div class="kod" id="kod"></div></div>
+  <div class="dugmeler">
+    <a class="dugme yesil" id="play" hidden></a>
+    <button class="dugme altin" id="ios" hidden></button>
+    <a class="dugme mor" id="ios2" hidden></a>
+  </div>
+  <p id="not" style="font-size:14px;margin-top:16px"></p>
+</main>
+<footer id="altbilgi"></footer>
+<script src="/assets/site.js"></script>
+<script>
+REBUS.baslat({
+  tr:{b:"Arkadaşın seni düelloya çağırdı!",a:"İki resmi birleştir, kelimeyi bul. 10 soruda onu geçebilir misin?",p:"Google Play'den indir",i:"Kodu kopyala ve App Store'a git",i2:"App Store'dan indir",n:"iPhone'da: oyunu açınca ARENA > DÜELLO > KOD GİR'e kodu yapıştır.",k:"Kod kopyalandı ✓"},
+  en:{b:"Your friend challenged you to a duel!",a:"Combine two pictures, find the word. Can you beat them in 10 puzzles?",p:"Get it on Google Play",i:"Copy code & open App Store",i2:"Download on the App Store",n:"On iPhone: open the game, go to ARENA > DUEL > ENTER CODE and paste the code.",k:"Code copied ✓"},
+  de:{b:"Dein Freund fordert dich zum Duell!",a:"Kombiniere zwei Bilder, finde das Wort. Schaffst du mehr in 10 Rätseln?",p:"Bei Google Play laden",i:"Code kopieren & App Store öffnen",i2:"Im App Store laden",n:"iPhone: Spiel öffnen, ARENA > DUELL > CODE EINGEBEN und Code einfügen.",k:"Code kopiert ✓"},
+  es:{b:"¡Tu amigo te reta a un duelo!",a:"Combina dos imágenes y encuentra la palabra. ¿Le superas en 10 acertijos?",p:"Descargar en Google Play",i:"Copiar código e ir a App Store",i2:"Descargar en App Store",n:"En iPhone: abre el juego, ARENA > DUELO > INTRODUCIR CÓDIGO y pega el código.",k:"Código copiado ✓"},
+  fr:{b:"Ton ami te défie en duel !",a:"Associe deux images, trouve le mot. Tu le bats en 10 énigmes ?",p:"Disponible sur Google Play",i:"Copier le code et ouvrir l'App Store",i2:"Télécharger dans l'App Store",n:"Sur iPhone : ouvre le jeu, ARÈNE > DUEL > ENTRER UN CODE et colle le code.",k:"Code copié ✓"}
+},function(T){
+  var q=new URLSearchParams(location.search);
+  var k=(q.get("k")||location.hash.slice(1)||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,8); if(k.length!==8) k="";
+  var play=REBUS.play("utm_source=duello&utm_medium=davet"+(k?"&duel="+k:""));
+  document.getElementById("baslik").textContent=T.b; document.getElementById("aciklama").textContent=T.a;
+  if(k){ document.getElementById("kodKutu").hidden=false; document.getElementById("kod").textContent="RB3."+k; }
+  var bp=document.getElementById("play"); bp.href=play; bp.textContent=T.p;
+  var bi=document.getElementById("ios"), bi2=document.getElementById("ios2"); bi.textContent=T.i; bi2.href=REBUS.APPLE; bi2.textContent=T.i2;
+  function git(){ location.href=REBUS.APPLE; }
+  bi.onclick=function(){
+    if(k&&navigator.clipboard){ navigator.clipboard.writeText("RB3."+k).then(function(){ bi.textContent=T.k; setTimeout(git,500); },git); } else git();
+  };
+  if(REBUS.android){ bp.hidden=false; setTimeout(function(){ location.href=play; },700); }
+  else if(REBUS.ios){ if(k){ bi.hidden=false; document.getElementById("not").textContent=T.n; } else { bi2.hidden=false; } }
+  else { bp.hidden=false; bi2.hidden=false; if(k) document.getElementById("not").textContent=T.n; }
+});
+</script>
+</body>
+</html>
