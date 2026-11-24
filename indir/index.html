@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REBUS — Download</title>
+<meta name="description" content="Download REBUS, the picture word puzzle game. Free on Google Play and the App Store.">
+<link rel="canonical" href="https://rebusgame.github.io/indir/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="REBUS">
+<meta property="og:title" content="REBUS — Picture Word Puzzle">
+<meta property="og:description" content="Combine two pictures, find the word. Free download.">
+<meta property="og:url" content="https://rebusgame.github.io/indir/">
+<meta property="og:image" content="https://rebusgame.github.io/assets/icon.jpg">
+<meta name="theme-color" content="#0b1533">
+<link rel="icon" type="image/jpeg" href="/assets/icon.jpg">
+<link rel="apple-touch-icon" href="/assets/icon.jpg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<main>
+  <img class="ikon" src="/assets/icon.jpg" alt="REBUS" width="132" height="132">
+  <h1>REBUS</h1>
+  <p class="alt" id="aciklama">Combine two pictures, find the word.</p>
+  <div class="dugmeler">
+    <a class="dugme yesil" id="play" href="https://play.google.com/store/apps/details?id=com.unuvargames.rebus">Get it on Google Play</a>
+    <a class="dugme mor" id="ios" href="https://apps.apple.com/app/id6836883587">Download on the App Store</a>
+  </div>
+</main>
+<footer id="altbilgi"></footer>
+<script src="/assets/site.js"></script>
+<script>
+REBUS.baslat({
+  tr:{a:"İki resmi birleştir, kelimeyi bul. 5 dilde 1500 bölüm, düello ve klanlar.",p:"Google Play'den indir",i:"App Store'dan indir"},
+  en:{a:"Combine two pictures, find the word. 1500 levels in 5 languages, duels and clans.",p:"Get it on Google Play",i:"Download on the App Store"},
+  de:{a:"Kombiniere zwei Bilder, finde das Wort. 1500 Level in 5 Sprachen, Duelle und Clans.",p:"Bei Google Play laden",i:"Im App Store laden"},
+  es:{a:"Combina dos imágenes y encuentra la palabra. 1500 niveles en 5 idiomas, duelos y clanes.",p:"Descargar en Google Play",i:"Descargar en App Store"},
+  fr:{a:"Associe deux images, trouve le mot. 1500 niveaux en 5 langues, duels et clans.",p:"Disponible sur Google Play",i:"Télécharger dans l'App Store"}
+},function(T){
+  var q=new URLSearchParams(location.search);
+  var kaynak=(q.get("s")||"site").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,30)||"site";
+  var play=REBUS.play("utm_source="+kaynak+"&utm_medium=link");
+  document.getElementById("aciklama").textContent=T.a;
+  var bp=document.getElementById("play"), bi=document.getElementById("ios");
+  bp.href=play; bp.textContent=T.p; bi.textContent=T.i;
+  if(REBUS.android){ bi.hidden=true; location.replace(play); }
+  else if(REBUS.ios){ bp.hidden=true; location.replace(REBUS.APPLE); }
+});
+</script>
+</body>
+</html>
