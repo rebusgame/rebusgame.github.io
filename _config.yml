@@ -1,0 +1,3 @@
+# REBUS resmi site (GitHub Pages). .well-known klasörü (Android/iOS link doğrulama) yayınlansın diye:
+include: [".well-known"]
+exclude: ["README.md"]

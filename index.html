@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REBUS — Picture Word Puzzle</title>
+<meta name="description" content="REBUS: combine two pictures, find the word. 1500 levels in 5 languages, duels with friends and clans. Free on Google Play and the App Store.">
+<link rel="canonical" href="https://rebusgame.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="REBUS">
+<meta property="og:title" content="REBUS — Picture Word Puzzle">
+<meta property="og:description" content="Combine two pictures, find the word. Free on Google Play and the App Store.">
+<meta property="og:url" content="https://rebusgame.github.io/">
+<meta property="og:image" content="https://rebusgame.github.io/assets/icon.jpg">
+<meta name="theme-color" content="#0b1533">
+<link rel="icon" type="image/jpeg" href="/assets/icon.jpg">
+<link rel="apple-touch-icon" href="/assets/icon.jpg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<main>
+  <img class="ikon" src="/assets/icon.jpg" alt="REBUS" width="132" height="132">
+  <h1>REBUS</h1>
+  <p class="alt" id="alt">Picture Word Puzzle</p>
+  <p id="aciklama">Combine two pictures, find the word.</p>
+  <div class="dugmeler">
+    <a class="dugme yesil" id="play" href="https://play.google.com/store/apps/details?id=com.unuvargames.rebus">Get it on Google Play</a>
+    <a class="dugme mor" id="ios" href="https://apps.apple.com/app/id6836883587">Download on the App Store</a>
+  </div>
+  <ul class="ozellik" id="ozellik"></ul>
+</main>
+<footer id="altbilgi"><p>© 2026 Unuvar Games · <a href="mailto:rebus.game.help@gmail.com">rebus.game.help@gmail.com</a></p></footer>
+<script src="/assets/site.js"></script>
+<script>
+REBUS.baslat({
+  tr:{t:"REBUS — Resimli Kelime Bulmaca",alt:"Resimli Kelime Bulmaca",a:"İki resmi birleştir, kelimeyi bul. Ücretsiz.",p:"Google Play'den indir",i:"App Store'dan indir",
+      o:["<b>1500 bölüm</b> — 5 dilde: Türkçe, English, Deutsch, Español, Français","<b>Düello</b> — arkadaşına meydan oku, 10 soruda kim kazanacak?","<b>Klanlar ve haftalık bulmaca</b> — takımını kur, her hafta yeni meydan okuma"]},
+  en:{t:"REBUS — Picture Word Puzzle",alt:"Picture Word Puzzle",a:"Combine two pictures, find the word. Free to play.",p:"Get it on Google Play",i:"Download on the App Store",
+      o:["<b>1500 levels</b> — in 5 languages: Türkçe, English, Deutsch, Español, Français","<b>Duels</b> — challenge a friend, who wins in 10 puzzles?","<b>Clans & weekly puzzle</b> — build your team, a new challenge every week"]},
+  de:{t:"REBUS — Bilderrätsel",alt:"Bilder-Worträtsel",a:"Kombiniere zwei Bilder, finde das Wort. Kostenlos.",p:"Bei Google Play laden",i:"Im App Store laden",
+      o:["<b>1500 Level</b> — in 5 Sprachen: Türkçe, English, Deutsch, Español, Français","<b>Duelle</b> — fordere Freunde heraus: Wer gewinnt in 10 Rätseln?","<b>Clans & Wochenrätsel</b> — gründe dein Team, jede Woche eine neue Herausforderung"]},
+  es:{t:"REBUS — Acertijo de imágenes",alt:"Acertijo de palabras con imágenes",a:"Combina dos imágenes y encuentra la palabra. Gratis.",p:"Descargar en Google Play",i:"Descargar en App Store",
+      o:["<b>1500 niveles</b> — en 5 idiomas: Türkçe, English, Deutsch, Español, Français","<b>Duelos</b> — reta a un amigo, ¿quién gana en 10 acertijos?","<b>Clanes y acertijo semanal</b> — forma tu equipo, un nuevo reto cada semana"]},
+  fr:{t:"REBUS — Rébus en images",alt:"Jeu de mots en images",a:"Associe deux images, trouve le mot. Gratuit.",p:"Disponible sur Google Play",i:"Télécharger dans l'App Store",
+      o:["<b>1500 niveaux</b> — en 5 langues : Türkçe, English, Deutsch, Español, Français","<b>Duels</b> — défie un ami : qui gagne en 10 énigmes ?","<b>Clans et énigme de la semaine</b> — forme ton équipe, un nouveau défi chaque semaine"]}
+},function(T){
+  document.title=T.t;
+  document.getElementById("alt").textContent=T.alt;
+  document.getElementById("aciklama").textContent=T.a;
+  var bp=document.getElementById("play"), bi=document.getElementById("ios");
+  bp.textContent=T.p; bp.href=REBUS.play("utm_source=site&utm_medium=anasayfa");
+  bi.textContent=T.i;
+  if(REBUS.ios) bp.parentNode.insertBefore(bi,bp);
+  document.getElementById("ozellik").innerHTML=T.o.map(function(x){return "<li>"+x+"</li>";}).join("");
+});
+</script>
+</body>
+</html>
